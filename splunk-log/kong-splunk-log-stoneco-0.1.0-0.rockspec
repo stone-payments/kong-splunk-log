@@ -16,8 +16,12 @@ dependencies = {}
 build = {
    type = "builtin",
    modules = {
-      ["kong.plugins.kong-splunk-log-stoneco.basic"] = "./basic.lua",
-      ["kong.plugins.kong-splunk-log-stoneco.handler"]  = "./handler.lua",
-      ["kong.plugins.kong-splunk-log-stoneco.schema"]= "./schema.lua"
+      ["kong.plugins.kong-splunk-log.buffer"] = "./buffer.lua",
+      ["kong.plugins.kong-splunk-log.json_producer"] = "./json_producer.lua",
+      ["kong.plugins.kong-splunk-log.lua_producer"] = "./lua_producer.lua",
+      ["kong.plugins.kong-splunk-log.sender"] = "./sender.lua",
+      ["kong.plugins.kong-splunk-log.basic"] = "./basic.lua",
+      ["kong.plugins.kong-splunk-log.handler"]  = "./handler.lua",
+      ["kong.plugins.kong-splunk-log.schema"]= "./schema.lua"
    }
 }
