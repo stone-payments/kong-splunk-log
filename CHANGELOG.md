@@ -5,7 +5,7 @@ All changes made on any release of this project should be commented on high leve
 Document model based on [Semantic Versioning](http://semver.org/).
 Examples of how to use this _markdown_ cand be found here [Keep a CHANGELOG](http://keepachangelog.com/).
 
-# Unreleased
+## [1.0.0](https://github.com/stone-payments/kong-splunk-log/tree/v1.0.0) - 2019-11-11
 
 ### Changed
 - [Make plugin work with Kong v0.15.0](https://dev.azure.com/stonepagamentos/frt-portal/_boards/board/t/Delivery%20-%20Plataforma/Stories/?workitem=93674)
