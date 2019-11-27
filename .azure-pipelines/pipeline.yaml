@@ -26,39 +26,6 @@ stages:
                 make check
                 make install
                 make package
-
-          - task: UniversalPackages@0
-            displayName: 'Download correct luacov-cobertura version'
-            inputs:
-              command: 'download'
-              downloadDirectory: '$(System.DefaultWorkingDirectory)'
-              feedsToUse: 'internal'
-              vstsFeed: 'd8a23181-28c7-4e59-9cea-25e643da3675'
-              vstsFeedPackage: '6162cb93-aff3-4686-8f03-fade4ecabccb'
-              vstsPackageVersion: '2.0.0'
-      
-          - task: Bash@3
-            displayName: 'Install luacov-cobertura correct version'
-            inputs:
-              targetType: 'inline'
-              script: |
-                luarocks remove luacov-cobertura
-                luarocks install $(System.DefaultWorkingDirectory)/luacov-cobertura-2.0-0.all.rock
-                rm $(System.DefaultWorkingDirectory)/luacov-cobertura-2.0-0.all.rock
-
-          - task: Bash@3
-            displayName: 'Run tests and code coverage'
-            inputs:
-              targetType: 'inline'
-              script: |
-                make coverage
-
-          - task: PublishCodeCoverageResults@1
-            displayName: 'Publish code coverage'
-            inputs:
-                codeCoverageTool: Cobertura
-                summaryFileLocation: '$(System.DefaultWorkingDirectory)/$(plugin)/cobertura.xml'
-
           - task: Bash@3
             displayName: 'Set Artifact Name and Version'
             inputs:
