@@ -14,6 +14,9 @@ function _M.serialize(ngx)
     }
   end
 
+  local req_headers = {table.unpack(ngx.req.get_headers())}
+  req_headers["authorization"] = nil
+
   return {
     host = splunkHost,
     source = ngx.var.hostname,
@@ -24,7 +27,7 @@ function _M.serialize(ngx)
         url = ngx.var.scheme .. "://" .. ngx.var.host .. ":" .. ngx.var.server_port .. ngx.var.request_uri,
         querystring = ngx.req.get_uri_args(), -- parameters, as a table
         method = ngx.req.get_method(), -- http method
-        headers = ngx.req.get_headers(),
+        headers = req_headers,
         size = ngx.var.request_length
       },
       upstream_uri = ngx.var.upstream_uri,
