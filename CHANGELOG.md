@@ -5,6 +5,11 @@ All changes made on any release of this project should be commented on high leve
 Document model based on [Semantic Versioning](http://semver.org/).
 Examples of how to use this _markdown_ cand be found here [Keep a CHANGELOG](http://keepachangelog.com/).
 
+## [1.0.2](https://github.com/stone-payments/kong-splunk-log/tree/v1.0.2) - 2020-08-18
+
+### Fixed
+- [Request header not null](https://dev.azure.com/stonepagamentos/frt-portal/_workitems/edit/185025)
+
 ## [1.0.1](https://github.com/stone-payments/kong-splunk-log/tree/v1.0.1) - 2020-08-11
 
 ### Fixed
